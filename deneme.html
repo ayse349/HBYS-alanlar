@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>MediCore AI</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#f4f9ff;
+    color:#222;
+    overflow-x:hidden;
+}
+
+/* HEADER */
+
+header{
+    position:fixed;
+    top:0;
+    width:100%;
+    padding:20px 80px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    z-index:1000;
+    background:rgba(255,255,255,0.9);
+    backdrop-filter:blur(12px);
+    box-shadow:0 4px 20px rgba(0,0,0,0.05);
+}
+
+.logo{
+    font-size:30px;
+    font-weight:800;
+    color:#0077ff;
+}
+
+nav a{
+    text-decoration:none;
+    color:#222;
+    margin-left:35px;
+    font-weight:500;
+    transition:0.3s;
+}
+
+nav a:hover{
+    color:#0077ff;
+}
+
+/* HERO */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:120px 80px;
+    background:
+    linear-gradient(rgba(0,0,0,0.55),
+    rgba(0,0,0,0.55)),
+    url('https://images.unsplash.com/photo-1579684385127-1ef15d508118?q=80&w=1600&auto=format&fit=crop');
+
+    background-size:cover;
+    background-position:center;
+    color:white;
+}
+
+.hero-text{
+    max-width:650px;
+}
+
+.hero-text h1{
+    font-size:72px;
+    line-height:1.1;
+    margin-bottom:25px;
+}
+
+.hero-text p{
+    font-size:22px;
+    line-height:1.8;
+    margin-bottom:40px;
+    color:#eee;
+}
+
+.btn{
+    display:inline-block;
+    padding:18px 42px;
+    border-radius:12px;
+    text-decoration:none;
+    background:linear-gradient(135deg,#00b4ff,#0077ff);
+    color:white;
+    font-weight:600;
+    transition:0.4s;
+}
+
+.btn:hover{
+    transform:translateY(-5px);
+    box-shadow:0 15px 35px rgba(0,119,255,0.4);
+}
+
+/* FLOAT CARD */
+
+.hero-card{
+    width:360px;
+    background:rgba(255,255,255,0.12);
+    border:1px solid rgba(255,255,255,0.2);
+    backdrop-filter:blur(18px);
+    padding:35px;
+    border-radius:25px;
+    animation:float 4s ease-in-out infinite;
+}
+
+.hero-card h3{
+    margin-bottom:25px;
+    font-size:28px;
+}
+
+.hero-card .item{
+    margin-bottom:20px;
+}
+
+.hero-card span{
+    display:block;
+    font-size:14px;
+    color:#ddd;
+}
+
+.hero-card strong{
+    font-size:24px;
+}
+
+@keyframes float{
+    0%{
+        transform:translateY(0px);
+    }
+    50%{
+        transform:translateY(-18px);
+    }
+    100%{
+        transform:translateY(0px);
+    }
+}
+
+/* STATS */
+
+.stats{
+    padding:100px 80px;
+    background:white;
+}
+
+.stats-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:30px;
+}
+
+.stat-box{
+    background:#f7fbff;
+    padding:45px;
+    border-radius:22px;
+    text-align:center;
+    transition:0.4s;
+    border:1px solid #eaf2ff;
+}
+
+.stat-box:hover{
+    transform:translateY(-10px);
+    box-shadow:0 20px 40px rgba(0,0,0,0.08);
+}
+
+.stat-box h2{
+    font-size:52px;
+    color:#0077ff;
+    margin-bottom:10px;
+}
+
+.stat-box p{
+    color:#666;
+}
+
+/* SERVICES */
+
+.services{
+    padding:120px 80px;
+}
+
+.section-title{
+    text-align:center;
+    font-size:52px;
+    color:#023e8a;
+    margin-bottom:70px;
+}
+
+.service-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:35px;
+}
+
+.service-card{
+    background:white;
+    padding:45px;
+    border-radius:24px;
+    transition:0.4s;
+    box-shadow:0 8px 30px rgba(0,0,0,0.05);
+}
+
+.service-card:hover{
+    transform:translateY(-12px);
+}
+
+.service-icon{
+    width:70px;
+    height:70px;
+    border-radius:18px;
+    background:linear-gradient(135deg,#00b4ff,#0077ff);
+    margin-bottom:25px;
+}
+
+.service-card h3{
+    margin-bottom:18px;
+    color:#0077ff;
+}
+
+.service-card p{
+    line-height:1.8;
+    color:#666;
+}
+
+/* ABOUT */
+
+.about{
+    padding:120px 80px;
+    display:flex;
+    gap:60px;
+    align-items:center;
+    background:white;
+}
+
+.about img{
+    width:50%;
+    border-radius:30px;
+}
+
+.about-text{
+    width:50%;
+}
+
+.about-text h2{
+    font-size:50px;
+    margin-bottom:25px;
+    color:#023e8a;
+}
+
+.about-text p{
+    line-height:2;
+    color:#666;
+    margin-bottom:30px;
+}
+
+/* CONTACT */
+
+.contact{
+    padding:120px 80px;
+    background:#023e8a;
+}
+
+.contact-box{
+    max-width:700px;
+    margin:auto;
+}
+
+.contact h2{
+    text-align:center;
+    color:white;
+    font-size:50px;
+    margin-bottom:50px;
+}
+
+form{
+    display:flex;
+    flex-direction:column;
+}
+
+input,
+textarea{
+    padding:18px;
+    margin-bottom:20px;
+    border:none;
+    border-radius:12px;
+    font-size:16px;
+}
+
+button{
+    padding:18px;
+    border:none;
+    border-radius:12px;
+    background:#00b4ff;
+    color:white;
+    font-size:17px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+button:hover{
+    background:#0096ff;
+}
+
+/* FOOTER */
+
+footer{
+    background:#001233;
+    color:white;
+    text-align:center;
+    padding:35px;
+}
+
+/* MOBILE */
+
+@media(max-width:950px){
+
+    header{
+        padding:20px;
+        flex-direction:column;
+    }
+
+    nav{
+        margin-top:15px;
+    }
+
+    .hero{
+        flex-direction:column;
+        padding:140px 20px 80px;
+        text-align:center;
+    }
+
+    .hero-text h1{
+        font-size:46px;
+    }
+
+    .hero-card{
+        margin-top:50px;
+        width:100%;
+    }
+
+    .about{
+        flex-direction:column;
+        padding:80px 20px;
+    }
+
+    .about img,
+    .about-text{
+        width:100%;
+    }
+
+    .services,
+    .stats,
+    .contact{
+        padding:80px 20px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">MediCore AI</div>
+
+<nav>
+<a href="deneme.html">Ana Sayfa</a>
+    <a href="https://giris.turkiye.gov.tr/Giris/gir">Hakkımızda</a>
+    <a href="https://www.saglik.gov.tr/">Çözümler</a>
+    <a href="#">İletişim</a>
+</nav>
+
+</header>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="hero-text">
+
+<h1>
+Yeni Nesil
+Dijital Sağlık
+Platformu
+</h1>
+
+<p>
+Yapay zeka destekli HBYS, PACS,
+e-Reçete ve sağlık veri analitiği çözümleri.
+</p>
+
+<a href="#" class="btn">
+Platformu İncele
+</a>
+
+</div>
+
+<div class="hero-card">
+
+<h3>Sistem İstatistikleri</h3>
+
+<div class="item">
+<span>Aktif Kullanıcı</span>
+<strong>82M+</strong>
+</div>
+
+<div class="item">
+<span>Günlük İşlem</span>
+<strong>310M+</strong>
+</div>
+
+<div class="item">
+<span>Sağlık Merkezi</span>
+<strong>95K+</strong>
+</div>
+
+</div>
+
+</section>
+
+<!-- STATS -->
+
+<section class="stats">
+
+<div class="stats-grid">
+
+<div class="stat-box">
+<h2>98%</h2>
+<p>Sistem Performansı</p>
+</div>
+
+<div class="stat-box">
+<h2>24/7</h2>
+<p>Canlı Destek</p>
+</div>
+
+<div class="stat-box">
+<h2>150+</h2>
+<p>Kurumsal Partner</p>
+</div>
+
+<div class="stat-box">
+<h2>12+</h2>
+<p>Global Ülke</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- SERVICES -->
+
+<section class="services">
+
+<h2 class="section-title">
+Çözümlerimiz
+</h2>
+
+<div class="service-grid">
+
+<div class="service-card">
+<div class="service-icon"></div>
+<h3>HBYS Sistemleri</h3>
+<p>
+Yeni nesil hastane bilgi yönetim sistemleri.
+</p>
+</div>
+
+<div class="service-card">
+<div class="service-icon"></div>
+<h3>PACS & DICOM</h3>
+<p>
+Tıbbi görüntüleme ve veri arşivleme çözümleri.
+</p>
+</div>
+
+<div class="service-card">
+<div class="service-icon"></div>
+<h3>Yapay Zeka</h3>
+<p>
+AI destekli sağlık veri analizi ve karar sistemleri.
+</p>
+</div>
+
+<div class="service-card">
+<div class="service-icon"></div>
+<h3>Mobil Sağlık</h3>
+<p>
+Hasta ve doktor uygulama altyapıları.
+</p>
+</div>
+
+<div class="service-card">
+<div class="service-icon"></div>
+<h3>Bulut Teknolojileri</h3>
+<p>
+Güvenli ve ölçeklenebilir sağlık bulut altyapısı.
+</p>
+</div>
+
+<div class="service-card">
+<div class="service-icon"></div>
+<h3>e-Reçete</h3>
+<p>
+Ulusal dijital reçete entegrasyon sistemleri.
+</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- ABOUT -->
+
+<section class="about">
+
+<img src="https://images.unsplash.com/photo-1580281657527-47f249e8f4df?q=80&w=1200&auto=format&fit=crop" alt="health">
+
+<div class="about-text">
+
+<h2>
+Sağlıkta Dijital
+Dönüşüm
+</h2>
+
+<p>
+MediCore AI, sağlık sektörüne özel yapay zeka,
+veri güvenliği ve dijital hastane çözümleri geliştirir.
+Modern altyapılar ile sağlık kurumlarının
+teknolojik dönüşümünü hızlandırır.
+</p>
+
+<a href="#" class="btn">
+Daha Fazla
+</a>
+
+</div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section class="contact">
+
+<div class="contact-box">
+
+<h2>İletişim</h2>
+
+<form>
+
+<input type="text" placeholder="Ad Soyad">
+
+<input type="email" placeholder="E-Posta">
+
+<textarea rows="6" placeholder="Mesajınız"></textarea>
+
+<button type="submit">
+Gönder
+</button>
+
+</form>
+
+</div>
+
+</section>
+
+<footer>
+
+© 2026 MediCore AI — Tüm Hakları Saklıdır.
+
+</footer>
+
+</body>
+</html>
